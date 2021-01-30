@@ -1,0 +1,28 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: 'Rubik';
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+}
+
+.container {
+  width: 100%;
+  padding: 0 20px;
+
+  @include mq('tablet') {
+    width: 768px;
+    margin: 0 auto;
+  }
+
+  @include mq('desktop') {
+    width: 1248px;
+  }
+}

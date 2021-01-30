@@ -1,3 +1,5 @@
-* {
-  box-sizing: border-box;
-}
+@import 'misc/settings';
+@import 'misc/defaults';
+
+// parts
+@import 'parts/header';
