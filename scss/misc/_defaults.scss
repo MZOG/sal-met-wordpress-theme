@@ -7,11 +7,61 @@
 body {
   font-size: 1rem;
   line-height: 1.5;
-  font-family: 'Rubik';
+  font-family: fieldwork, sans-serif;
   margin: 0;
   padding: 0;
-  background: #fafafa;
+  background: #FBFBFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  height: 100%;
 }
+
+html {
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+// typography
+h2 {
+  line-height: 1;
+  font-size: 30px;
+  color: $primary;
+
+  @include mq('tablet') {
+    font-size: 35px;
+    text-align: center;
+  }
+
+  @include mq('desktop', 'min') {
+    font-size: 40px;
+  }
+}
+
+h3 {
+  font-size: 23px;
+
+  @include mq('desktop') {
+    font-size: 25px;
+  }
+}
+
+.lead {
+  font-size: 16px;
+  margin-top: 10px;
+
+  @include mq('tablet') {
+    max-width: 90%;
+    text-align: center;
+    margin: 20px auto 0 auto;
+    font-size: 18px;
+  }
+
+  @include mq('desktop') {
+    max-width: 60%;
+  }
+}
+
 
 .container {
   width: 100%;
@@ -22,7 +72,35 @@ body {
     margin: 0 auto;
   }
 
+  @include mq('tablet-wide') {
+    width: 992px;
+  }
+
   @include mq('desktop') {
     width: 1248px;
+  }
+}
+
+.btn {
+  background: $primary;
+  color: $white;
+  line-height: 1;
+  text-decoration: none;
+  padding: 11px 20px 15px 20px;
+  border-radius: 10px;
+
+  &:hover {
+    background: rgba($primary, 0.15);
+    color: $primary;
+  }
+
+  &-light {
+    background: rgba($primary, 0.15);
+    color: $primary;
+
+    &:hover {
+      background: $primary;
+      color: $white;
+    }
   }
 }

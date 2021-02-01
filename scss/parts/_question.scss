@@ -1,0 +1,84 @@
+.question {
+  padding: 25px 0 30px;
+
+  @include mq('tablet') {
+    padding: 45px 0 50px;
+  }
+
+  .lead {
+    margin-bottom: 15px;
+    max-width: 100%;
+
+    @include mq('desktop') {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__content {
+    background: $white;
+    border-radius: 10px;
+    // border: 1px solid rgba($primary, 0.1);
+    padding: 20px;
+    box-shadow: -20px 0px 20px 0px rgba(50, 50, 93, 0.05), 0 5px 15px rgba(0, 0,0, 0.05);
+
+    @include mq('tablet') {
+      width: 80%;
+      margin: 0 auto;
+      padding: 35px 0 40px;
+    }
+
+    &-items {
+      @include mq('tablet') {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      @include mq('desktop') {
+        width: 60%;
+      }
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+
+      @include mq('tablet', 'min') {
+        // width: 50%;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+
+        @include mq('tablet', 'min') {
+          margin-bottom: 0;
+        }
+      }
+
+      svg {
+        width: 25px;
+        margin-right: 10px;
+
+        @include mq('tablet') {
+          width: 30px;
+        }
+      }
+
+      a {
+        padding-bottom: 2px;
+        text-decoration: none;
+        color: $primary;
+
+        @include mq('tablet') {
+          font-size: 18px;
+        }
+
+        @include mq('desktop') {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

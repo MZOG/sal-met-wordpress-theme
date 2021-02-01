@@ -1,0 +1,32 @@
+.portfolio {
+  background: $white;
+  padding: 25px 0 30px;
+
+  @include mq('tablet') {
+    padding: 45px 0 50px;
+  }
+
+  #foogallery-gallery-72 {
+    margin-top: 30px;
+
+    @include mq('desktop', 'min') {
+      margin-top: 50px;
+    }
+  }
+
+  &__more {
+    margin-top: 20px;
+
+    @include mq('desktop') {
+      margin-top: 40px;
+    }
+
+    @include mq('tablet') {
+      text-align: center;
+    }
+
+    a {
+      display: inline-block;
+    }
+  }
+}
