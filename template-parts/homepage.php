@@ -4,6 +4,12 @@
 */
 
 get_header();
+
+$blog = array( 'posts_per_page' => 3, 'cat' => '1', );
+$blog_query = new WP_Query( $blog );
+
+$portfolio = array( 'posts_per_page' => 8, 'cat' => '3', );
+$portfolio_query = new WP_Query( $portfolio );
 ?>
 
 <section class="hero">
@@ -192,7 +198,24 @@ get_header();
     <h2>Realizacje</h2>
     <p class="lead"><?php the_field('realizacje-lead'); ?></p>
 
-    <?php echo do_shortcode('[foogallery id="72"]'); ?>
+    <div class="portfolio__items">
+      <?php
+        if ( $portfolio_query->have_posts() ) :
+          while ( $portfolio_query->have_posts() ) : $portfolio_query->the_post(); ?>
+              <article class="portfolio__item">
+                <a href="<?php the_permalink(); ?>">
+                  <?php the_post_thumbnail( 'full' ); ?>
+                </a>
+              </article>
+          <?php endwhile;
+        else:
+        // If no posts match this query, output this text.
+          _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
+        endif;
+
+        wp_reset_postdata();
+      ?>
+    </div>
 
     <div class="portfolio__more">
       <a href="#" class="btn">Więcej realizacji</a>
@@ -219,4 +242,39 @@ get_header();
   </div>
 </section>
 
+<section class="blog">
+  <div class="container">
+    <h2>Blog</h2>
+    <p class="lead"><?php the_field('blog-lead'); ?></p>
+
+    <div class="blog__items">
+    <?php
+      if ( $blog_query->have_posts() ) :
+        while ( $blog_query->have_posts() ) : $blog_query->the_post(); ?>
+            <article class="blog__item">
+              <?php the_post_thumbnail( 'full' ); ?>
+              <div class="blog__item-content">
+                <h3>
+                  <a href="<?php the_permalink(); ?>">
+                    <?php the_title(); ?>
+                  </a>
+                </h3>
+                <span class="blog__item-content-date"><?php echo get_the_date(); ?></span>
+                <p class="blog__item-content-excerpt"><?php echo get_the_excerpt(); ?></p>
+                <div class="blog__item-content-cta">
+                  <a href="<?php the_permalink(); ?>" class="btn">Czytaj więcej</a>
+                </div>
+              </div>
+            </article>
+        <?php endwhile;
+      else:
+      // If no posts match this query, output this text.
+        _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
+      endif;
+
+      wp_reset_postdata();
+      ?>
+    </div>
+  </div>
+</section>
 <?php get_footer(); ?>

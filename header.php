@@ -8,9 +8,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<main>
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'sal-met' ); ?></a>
-
 	<header class="header">
 
 		<div class="header__top">
@@ -64,3 +62,4 @@
 
 		</div>
 	</header><!-- #masthead -->
+<main>
