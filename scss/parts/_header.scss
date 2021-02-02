@@ -116,6 +116,15 @@
     transition: right 330ms ease-in-out;
     box-shadow: -20px 0px 20px 0px rgba(50, 50, 93, 0.05), 0 5px 15px rgba(0, 0,0, 0.05);
 
+    @include mq('tablet') {
+      position: relative;
+      right: auto;
+      top: auto;
+      padding: 0;
+      width: auto;
+      box-shadow: none;
+    }
+
     &.open {
       right: 0;
     }
@@ -125,6 +134,10 @@
 
       li {
 
+        @include mq('tablet', 'min') {
+          display: inline-block;
+        }
+
         a {
           color: $primary;
           padding: 10px 30px;
@@ -132,6 +145,10 @@
           font-size: 16px;
           font-weight: 400;
           display: block;
+
+          @include mq('tablet', 'min') {
+            color: $primary;
+          }
         }
 
         .sub-menu {

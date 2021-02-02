@@ -1,8 +1,8 @@
 .question {
-  padding: 25px 0 30px;
+  padding: 50px;
 
   @include mq('tablet') {
-    padding: 50px;
+    padding: 70px;
   }
 
   .lead {

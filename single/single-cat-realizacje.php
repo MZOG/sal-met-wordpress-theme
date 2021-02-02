@@ -7,12 +7,13 @@ get_header();
       <div class="post__content">
         <h1><?php the_title(); ?></h1>
         <p>main image</p>
-
+        <?php if (get_field('nazwa_klienta')) : ?>
         <div class="post__portfolio-info">
           <div class="post__portfolio-info-item">
             <p>Klient</p>
             <p><strong><?php the_field('nazwa_klienta'); ?></strong></p>
           </div>
+          <?php if (get_field('usluga')) : ?>
           <div class="post__portfolio-info-item">
             <p>Usługa</p>
             <p>
@@ -21,12 +22,15 @@ get_header();
               </a>
             </p>
           </div>
+          <?php endif; ?>
+          <?php if (get_field('realizacja_rok')) : ?>
           <div class="post__portfolio-info-item">
             <p>Realizacja</p>
             <p><strong><?php the_field('realizacja_rok'); ?></strong></p>
           </div>
+          <?php endif; ?>
         </div>
-
+        <?php endif; ?>
         <?php the_content(); ?>
       </div>
     <?php endwhile; ?>

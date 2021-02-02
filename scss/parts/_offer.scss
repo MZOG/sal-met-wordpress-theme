@@ -50,8 +50,6 @@
   }
 
   &__more {
-    margin-top: 20px;
-
     @include mq('tablet') {
       text-align: center;
     }

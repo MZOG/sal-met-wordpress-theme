@@ -277,4 +277,39 @@ $portfolio_query = new WP_Query( $portfolio );
     </div>
   </div>
 </section>
+
+<section class="contact">
+  <div class="container">
+    <h2>Kontakt</h2>
+    <p class="lead"><?php the_field('blog-lead'); ?></p>
+
+    <div class="contact__items">
+      <div class="contact__item">
+        <h3>Porozmawiaj z nami</h3>
+        <p>Zadzwoń: <a href="tel:+48739907919">+48 739 907 919</a></p>
+        <p>E-mail: <a href="mailto:kontakt@sal-met.com">kontakt@sal-met.com</a></p>
+
+        <div class="contact__item-social">
+          <p>facebook</p>
+          <p>insta</p>
+        </div>
+      </div>
+
+      <div class="contact__item">
+        <h3>Firma</h3>
+
+        <p>S.A.L - MET</p>
+        <p>Łukasz Andryszewski</p>
+        <p class="sep">Nowe Osiedle 8/49</p>
+        <p>47-123 Zawadzkie,</p>
+        <p>Polska</p>
+        <p class="sep">NIP: 7561845454</p>
+      </div>
+
+      <div class="contact__item">
+        <p>google maps</p>
+      </div>
+    </div>
+  </div>
+</section>
 <?php get_footer(); ?>

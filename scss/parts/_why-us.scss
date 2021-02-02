@@ -60,6 +60,7 @@
 
       .title {
         h3 {
+          padding-bottom: 4px;
           @include mq('phablet') {
             margin-top: 10px;
           }
@@ -73,8 +74,6 @@
   }
 
   &__more {
-    margin-top: 20px;
-
     @include mq('tablet') {
       text-align: center;
     }
