@@ -52,8 +52,8 @@
 				<?php
 				wp_nav_menu(
 					array(
-						'theme_location' => 'menu-1',
-						'container'      => 'false'
+						'theme_location' => 'primary_menu',
+						'container'      => false
 					)
 				);
 				?>

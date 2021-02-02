@@ -1,0 +1,39 @@
+.page {
+
+
+  .blog__posts {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    column-gap: 20px;
+
+    @include mq('tablet', 'min') {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    @include mq('tablet-wide') {
+      column-gap: 40px;
+      margin-top: 50px;
+    }
+
+    @include mq('desktop', 'min') {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+  }
+
+  .blog__post {
+    &-header {
+      h2 {
+        text-align: left;
+        margin: 10px 0;
+
+        a {
+          text-decoration: none;
+          color: $primary;
+          font-size: 35px;
+        }
+      }
+    }
+  }
+
+}

@@ -5,26 +5,6 @@ if ( ! defined( '_S_VERSION' ) ) {
 }
 
 /**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-// function sal_met_widgets_init() {
-// 	register_sidebar(
-// 		array(
-// 			'name'          => esc_html__( 'Sidebar', 'sal-met' ),
-// 			'id'            => 'sidebar-1',
-// 			'description'   => esc_html__( 'Add widgets here.', 'sal-met' ),
-// 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-// 			'after_widget'  => '</section>',
-// 			'before_title'  => '<h2 class="widget-title">',
-// 			'after_title'   => '</h2>',
-// 		)
-// 	);
-// }
-// add_action( 'widgets_init', 'sal_met_widgets_init' );
-
-/**
  * Enqueue scripts and styles.
  */
 function sal_met_scripts() {
@@ -80,7 +60,7 @@ function disable_emojis() {
 }
 add_action( 'init', 'disable_emojis' );
 
-add_filter( 'nav_menu_css_class', '__return_empty_array', 10, 3 );
+// add_filter( 'nav_menu_css_class', '__return_empty_array', 10, 3 );
 
 add_theme_support('post-thumbnails', array(
 	'post',
@@ -132,3 +112,13 @@ function register_portfolio_sidebar() {
 	) );
 }
 add_action( 'widgets_init', 'register_portfolio_sidebar' );
+
+if ( ! function_exists( 'salmet_register_nav_menu' ) ) {
+
+	function salmet_register_nav_menu(){
+			register_nav_menus( array(
+					'primary_menu' => __( 'Primary', 'text_domain' ),
+			) );
+	}
+	add_action( 'after_setup_theme', 'salmet_register_nav_menu', 0 );
+}

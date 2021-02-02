@@ -14,14 +14,16 @@ $portfolio_query = new WP_Query( $portfolio );
 
 <section class="hero">
   <div class="container">
-    <h1>Precyzyjne cięcie i gięcie  blach. Zawsze na czas.</h1>
-    <p>Oferujemy wysokiej jakości cięcie laserem blach, rur oraz profili. Wyginamy blachy jak nikt inny, zawsze precyzyjnie.</p>
-    <div class="hero-cta">
-      <a class="btn" href="#">Sprawdź ofertę</a>
-      <a class="btn btn-light" href="#">Zobacz realizacje</a>
+    <div class="hero__content">
+      <h1>Precyzyjne cięcie i gięcie  blach. Zawsze na czas.</h1>
+      <p>Oferujemy wysokiej jakości cięcie laserem blach, rur oraz profili. Wyginamy blachy jak nikt inny, zawsze precyzyjnie.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#">Sprawdź ofertę</a>
+        <a class="btn btn-light" href="#">Zobacz realizacje</a>
+      </div>
     </div>
 
-    <div class="hero-image">
+    <div class="hero__image">
       <img src="<?php echo get_template_directory_uri(); ?>/images/hero.jpg" alt="S.A.L - MET - Cięcie laserem blach" />
     </div>
   </div>

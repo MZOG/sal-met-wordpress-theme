@@ -14,10 +14,18 @@
       display: flex;
       align-items: center;
 
+      @include mq('tablet', 'min') {
+        margin-left: 40px;
+      }
+
       svg {
         margin-top: 2px;
         margin-right: 10px;
         width: 16px;
+
+        @include mq('tablet') {
+          width: 18px;
+        }
       }
     }
 
@@ -27,18 +35,34 @@
       color: $primary;
       display: block;
       padding: 4px 0;
+
+      @include mq('tablet', 'min') {
+        font-size: 16px;
+      }
     }
 
     .container {
       justify-content: flex-end;
       display: flex;
       justify-content: space-between;
+
+      @include mq('tablet', 'min') {
+        justify-content: flex-end;
+      }
     }
   }
 
   .logo {
     img {
       width: 180px;
+
+      @include mq('tablet', 'min') {
+        width: 220px;
+      }
+
+      @include mq('desktop', 'min') {
+        width: 280px;
+      }
     }
   }
 
@@ -133,14 +157,38 @@
       list-style: none;
 
       li {
-
         @include mq('tablet', 'min') {
           display: inline-block;
+          position: relative;
+
+          &:last-child {
+            a {
+              padding-right: 0 !important;
+            }
+          }
+        }
+
+        &.current-menu-item {
+          @include mq('tablet') {
+            &::before {
+              position: absolute;
+              left: 0;
+              top: 54%;
+              transform: translateY(-50%);
+              content: "";
+              width: 6px;
+              height: 6px;
+              border-radius: 10px;
+              background: $primary;
+              opacity: 0;
+              transition: all .2s;
+            }
+          }
         }
 
         a {
           color: $primary;
-          padding: 10px 30px;
+          padding: 10px 20px;
           text-decoration: none;
           font-size: 16px;
           font-weight: 400;
@@ -148,11 +196,78 @@
 
           @include mq('tablet', 'min') {
             color: $primary;
+
+          }
+        }
+
+        &.menu-item-has-children {
+          &:hover {
+            .sub-menu {
+              transform: translateX(-50%);
+              visibility: visible;
+              opacity: 1;
+            }
           }
         }
 
         .sub-menu {
           display: none;
+
+          @include mq('tablet') {
+            white-space: nowrap;
+            display: block;
+            position: absolute;
+            top: 100%;
+            border: 1px solid rgba($primary, 0.1);
+            border-radius: 10px;
+            z-index: 1;
+            background: $white;
+            columns: 2;
+            padding: 20px;
+            visibility: hidden;
+            transform-origin: left top;
+            opacity: 0;
+
+            &:hover {
+              li {
+                opacity: 0.2;
+              }
+            }
+
+            li {
+              display: block;
+              transition: all .2s;
+
+              &:hover {
+                opacity: 1;
+              }
+
+              a {
+                position: relative;
+
+                &::before {
+                  position: absolute;
+                  left: 20px;
+                  top: 54%;
+                  transform: translateY(-50%);
+                  content: "";
+                  width: 6px;
+                  height: 6px;
+                  border-radius: 10px;
+                  background: $primary;
+                  opacity: 0;
+                  transition: all .4s;
+                }
+
+                &:hover {
+                  &::before {
+                    opacity: 1;
+                    left: 0;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
