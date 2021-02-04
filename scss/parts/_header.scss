@@ -168,24 +168,6 @@
           }
         }
 
-        &.current-menu-item {
-          @include mq('tablet') {
-            &::before {
-              position: absolute;
-              left: 0;
-              top: 54%;
-              transform: translateY(-50%);
-              content: "";
-              width: 6px;
-              height: 6px;
-              border-radius: 10px;
-              background: $primary;
-              opacity: 0;
-              transition: all .2s;
-            }
-          }
-        }
-
         a {
           color: $primary;
           padding: 10px 20px;
@@ -196,7 +178,11 @@
 
           @include mq('tablet', 'min') {
             color: $primary;
+            position: relative;
 
+            &:hover {
+              color: darken($primary, 20%);
+            }
           }
         }
 

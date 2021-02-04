@@ -5,8 +5,8 @@ get_header();
     <div class="container">
     <?php while ( have_posts() ) : the_post(); ?>
       <div class="post__content">
-
         <h1><?php the_title(); ?></h1>
+        <?php the_post_thumbnail( 'full' ); ?>
         <?php if (get_field('nazwa_klienta')) : ?>
         <div class="post__portfolio-info">
           <div class="post__portfolio-info-item">
@@ -31,12 +31,7 @@ get_header();
           <?php endif; ?>
         </div>
         <?php endif; ?>
-        <?php the_post_thumbnail( 'full' ); ?>
-
-        <div class="post__content-text">
-          <?php the_content(); ?>
-        </div>
-
+        <?php the_content(); ?>
       </div>
     <?php endwhile; ?>
     <aside class="post__sidebar">

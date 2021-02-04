@@ -2,7 +2,6 @@
 /**
  * Template part for displaying posts
  *
- * Blog Page posts display
  */
 
 ?>

@@ -1,22 +1,58 @@
 .post {
+  margin-top: 50px;
 
   .container {
-    display: flex;
-    justify-content: space-between;
+    @include mq('tablet-wide') {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__content {
-    width: calc(75% - 15px);
+    @include mq('tablet-wide') {
+      width: calc(75% - 25px);
+    }
+
+    img {
+      border-radius: 10px;
+      box-shadow: -10px 0px 20px 0px rgba(50, 50, 93, 0.05), 0 5px 15px rgba(0, 0,0, 0.05);
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 20px;
+
+      @include mq('tablet', 'min') {
+        font-size: 40px;
+      }
+    }
+
+    p {
+      font-size: 17.5px;
+    }
+
+    &-text {
+      margin-top: 30px;
+    }
   }
 
   &__sidebar {
+    display: none;
+    width: calc(25% - 25px);
     margin-top: 75px;
-    width: calc(25% - 15px);
-    border: 1px solid rgba($primary, 0.1);
+    // border: 1px solid rgba($primary, 0.1);
     background: $white;
-    padding: 15px;
+    padding: 20px 15px;
     border-radius: 10px;
     box-shadow: -10px 0px 20px 0px rgba(50, 50, 93, 0.05), 0 5px 15px rgba(0, 0,0, 0.05);
+
+    @include mq('tablet-wide') {
+      display: block;
+    }
+
+    div {
+      margin-bottom: 30px;
+    }
 
     &-title {
       font-size: 25px;
@@ -77,28 +113,34 @@
     }
   }
 
-  h1 {
-    font-size: 50px;
-  }
 
-  p {
-    font-size: 17.5px;
-  }
 
   // special styles for realizacje post template
   &__portfolio {
     &-info {
-      width: 90%;
-      margin: 30px 0;
+      margin: 20px 0;
       background: $white;
       border-radius: 10px;
       border: 1px solid rgba($primary, 0.1);
       padding: 20px;
       display: flex;
-      align-items: center;
+      flex-direction: column;
+
+      @include mq('tablet-wide') {
+        flex-direction: row;
+        width: 90%;
+        margin: 30px 0;
+      }
 
       &-item {
-        margin-right: 100px;
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+
+        @include mq('tablet-wide') {
+          margin-right: 50px;
+          margin-bottom: 0 !important;
+        }
 
         a {
           text-decoration: none;

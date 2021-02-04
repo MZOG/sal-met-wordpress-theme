@@ -1,22 +1,23 @@
+<?php get_header(); ?>
+
+	<section>
+		<div class="container">
+			<?php
+			while ( have_posts() ) :
+				the_post();
+
+				get_template_part( 'template-parts/content', 'page' );
+
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+
+			endwhile; // End of the loop.
+			?>
+		</div>
+	</section>
+
 <?php
-get_header();
-?>
-  <article class="post post__portfolio">
-    <div class="container">
-    <?php while ( have_posts() ) : the_post(); ?>
-      <div class="post__content">
-        <h1><?php the_title(); ?></h1>
-        <p>main image</p>
-
-
-        <?php the_content(); ?>
-      </div>
-    <?php endwhile; ?>
-    <aside class="post__sidebar">
-      <?php dynamic_sidebar('portfolio-sidebar'); ?>
-    </aside>
-    </div>
-  </article>
-<?php
-
+get_sidebar();
 get_footer();

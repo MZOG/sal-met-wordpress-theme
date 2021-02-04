@@ -12,6 +12,7 @@ $portfolio = array( 'posts_per_page' => 8, 'cat' => '3', );
 $portfolio_query = new WP_Query( $portfolio );
 ?>
 
+<!-- hero -->
 <section class="hero">
   <div class="container">
     <div class="hero__content">
@@ -29,6 +30,7 @@ $portfolio_query = new WP_Query( $portfolio );
   </div>
 </section>
 
+<!-- why us -->
 <section class="why-us">
   <div class="container">
     <h2>Co nas wyróżnia</h2>
@@ -121,10 +123,13 @@ $portfolio_query = new WP_Query( $portfolio );
   </div>
 </section>
 
+<!-- offer -->
 <section class="offer">
   <div class="container">
     <h2>Usługi S.A.L - MET</h2>
     <p class="lead"><?php the_field('uslugi-lead'); ?></p>
+
+
 
     <div class="offer__items">
       <div class="offer__item">
@@ -138,52 +143,52 @@ $portfolio_query = new WP_Query( $portfolio );
           </p>
 
           <div class="offer__item-cta">
-            <a href="#" class="btn btn-light">Więcej informacji</a>
+            <a href="<?php echo site_url(); ?>/oferta/ciecie-laserem-blach/" class="btn btn-light">Więcej informacji</a>
           </div>
         </div>
       </div>
       <div class="offer__item">
         <div class="offer__item-image">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/offer.jpg" alt="S.A.L - MET - Cięcie laserem blach" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/offer.jpg" alt="S.A.L - MET - Cięcie laserem rur i profili" />
         </div>
         <div class="offer__item-content">
-          <h3>Cięcie laserem blach</h3>
+          <h3>Cięcie laserem rur i profili</h3>
           <p>
             acf
           </p>
 
           <div class="offer__item-cta">
-            <a href="#" class="btn btn-light">Więcej informacji</a>
+            <a href="<?php echo site_url(); ?>/oferta/ciecie-laserem-rur-i-profili/" class="btn btn-light">Więcej informacji</a>
           </div>
         </div>
       </div>
       <div class="offer__item">
         <div class="offer__item-image">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/offer.jpg" alt="S.A.L - MET - Cięcie laserem blach" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/offer.jpg" alt="S.A.L - MET - Gięcie blach" />
         </div>
         <div class="offer__item-content">
-          <h3>Cięcie laserem blach</h3>
+          <h3>Gięcie blach</h3>
           <p>
             acf
           </p>
 
           <div class="offer__item-cta">
-            <a href="#" class="btn btn-light">Więcej informacji</a>
+            <a href="<?php echo site_url(); ?>/oferta/giecie-blach/" class="btn btn-light">Więcej informacji</a>
           </div>
         </div>
       </div>
       <div class="offer__item">
         <div class="offer__item-image">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/offer.jpg" alt="S.A.L - MET - Cięcie laserem blach" />
+          <img src="<?php echo get_template_directory_uri(); ?>/images/offer.jpg" alt="S.A.L - MET - Gięcie rur i profili" />
         </div>
         <div class="offer__item-content">
-          <h3>Cięcie laserem blach</h3>
+          <h3>Gięcie rur i profili</h3>
           <p>
             acf
           </p>
 
           <div class="offer__item-cta">
-            <a href="#" class="btn btn-light">Więcej informacji</a>
+            <a href="<?php echo site_url(); ?>/oferta/giecie-rur-i-profili/" class="btn btn-light">Więcej informacji</a>
           </div>
         </div>
       </div>
@@ -195,6 +200,7 @@ $portfolio_query = new WP_Query( $portfolio );
   </div>
 </section>
 
+<!-- portfolio -->
 <section class="portfolio">
   <div class="container">
     <h2>Realizacje</h2>
@@ -225,6 +231,7 @@ $portfolio_query = new WP_Query( $portfolio );
   </div>
 </section>
 
+<!-- question -->
 <section class="question">
   <div class="container">
     <div class="question__content">
@@ -244,6 +251,7 @@ $portfolio_query = new WP_Query( $portfolio );
   </div>
 </section>
 
+<!-- blog -->
 <section class="blog">
   <div class="container">
     <h2>Blog</h2>
@@ -280,6 +288,7 @@ $portfolio_query = new WP_Query( $portfolio );
   </div>
 </section>
 
+<!-- contact -->
 <section class="contact">
   <div class="container">
     <h2>Kontakt</h2>
@@ -314,4 +323,5 @@ $portfolio_query = new WP_Query( $portfolio );
     </div>
   </div>
 </section>
+
 <?php get_footer(); ?>
