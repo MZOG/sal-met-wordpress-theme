@@ -2,27 +2,21 @@
   margin-top: 30px;
 
   h1 {
-    font-size: 50px;
+    font-size: 38px;
+    color: $primary;
   }
 
-  .blog__posts {
-    // margin-top: 30px;
-    // display: grid;
-    // grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    // column-gap: 20px;
+ .entry-content {
+    p {
+      font-size: 17.5px;
 
-    // @include mq('tablet', 'min') {
-    //   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    // }
-
-    // @include mq('tablet-wide') {
-    //   column-gap: 40px;
-    //   margin-top: 50px;
-    // }
-
-    // @include mq('desktop', 'min') {
-    //   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    // }
+      &:first-child {
+        text-align: left;
+        min-width: 100%;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+    }
   }
 
   .blog__post {
@@ -67,4 +61,91 @@
     }
   }
 
+
+  // strona Oferta
+  &__offer {
+
+    &-items {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      column-gap: 40px;
+
+      &-item {
+        margin-bottom: 20px;
+        border: 1px solid rgba($primary, 0.1);
+        border-radius: 10px;
+        box-shadow: -20px 0px 20px 0px rgba(50, 50, 93, 0.05), 0 5px 15px rgba(0, 0,0, 0.05);
+
+        @include mq('tablet') {
+          margin-bottom: 50px;
+        }
+
+        img {
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+
+        .content {
+          background: $white;
+          padding: 20px;
+          margin-top: -5px;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+        }
+
+        .cta {
+          margin-top: 20px;
+
+          a {
+            display: inline-block;
+          }
+        }
+
+        h2 {
+          text-align: left;
+          line-height: 1;
+
+          a {
+            line-height: 1;
+            font-size: 25px;
+            display: block;
+            text-decoration: none;
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+
+  // Page
+  &__default {
+    clear: both;
+    .entry-content {
+      margin-top: 30px;
+
+      figure {
+        margin: 0;
+
+        @include mq('tablet') {
+          margin-left: 20px;
+        }
+      }
+
+      p {
+        font-size: 17.5px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+
+      .wp-block-image {
+        margin: 0;
+        img {
+          display: block;
+          border-radius: 10px;
+          box-shadow: -20px 0px 20px 0px rgba(50, 50, 93, 0.05), 0 5px 15px rgba(0, 0,0, 0.05);
+        }
+      }
+    }
+  }
 }

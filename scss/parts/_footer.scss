@@ -59,6 +59,22 @@
   &__item {
     &-social {
       margin-top: 15px;
+
+      .social-item {
+        display: flex;
+
+        svg {
+          width: 30px;
+          margin-right: 5px;
+        }
+
+        color: $white;
+        text-decoration: none;
+      }
+    }
+
+    .footer-contact {
+      margin: 20px 0;
     }
 
     ul {

@@ -1,5 +1,5 @@
 .post {
-  margin-top: 50px;
+  margin-top: 30px;
 
   .container {
     @include mq('tablet-wide') {
@@ -10,7 +10,7 @@
 
   &__content {
     @include mq('tablet-wide') {
-      width: calc(75% - 25px);
+      width: calc(71% - 15px);
     }
 
     img {
@@ -19,7 +19,8 @@
     }
 
     h1 {
-      font-size: 30px;
+      font-size: 38px;
+      color: $primary;
       margin-bottom: 20px;
 
       @include mq('tablet', 'min') {
@@ -38,20 +39,19 @@
 
   &__sidebar {
     display: none;
-    width: calc(25% - 25px);
-    margin-top: 75px;
-    // border: 1px solid rgba($primary, 0.1);
-    background: $white;
-    padding: 20px 15px;
-    border-radius: 10px;
-    box-shadow: -10px 0px 20px 0px rgba(50, 50, 93, 0.05), 0 5px 15px rgba(0, 0,0, 0.05);
+    width: calc(28% - 15px);
+    margin-top: 67px;
 
     @include mq('tablet-wide') {
       display: block;
     }
 
-    div {
+    > div {
       margin-bottom: 30px;
+      border: 1px solid rgba($primary, 0.1);
+      padding: 20px 15px;
+      border-radius: 10px;
+      box-shadow: -20px 0px 20px 0px rgba(50, 50, 93, 0.05), 0 5px 15px rgba(0, 0,0, 0.05);
     }
 
     &-title {

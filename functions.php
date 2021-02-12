@@ -11,6 +11,7 @@ function sal_met_scripts() {
 	wp_enqueue_style( 'defaults-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_enqueue_style( 'sal-met-style', get_template_directory_uri() . '/sal-met.min.css', false, time(), 'all' );
 
+	wp_enqueue_script( 'sal-met-jquery', get_template_directory_uri() . '/js/jquery.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'sal-met-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

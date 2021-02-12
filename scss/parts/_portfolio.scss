@@ -3,7 +3,27 @@
   padding: 25px 0 30px;
 
   @include mq('tablet') {
-    padding: 45px 0 50px;
+    padding: 60px 0 65px;
+  }
+
+  &__page {
+    &-items {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      column-gap: 20px;
+
+      @include mq('tablet-wide') {
+        column-gap: 40px;
+        margin-top: 50px;
+      }
+
+      img {
+        border-radius: 10px;
+        box-shadow: -20px 0px 20px 0px rgba(50, 50, 93, 0.05), 0 5px 15px rgba(0, 0,0, 0.05);
+        display: block;
+      }
+    }
   }
 
   &__items {

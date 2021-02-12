@@ -3,7 +3,7 @@
   padding: 25px 0 30px;
 
   @include mq('tablet') {
-    padding: 45px 0 50px;
+    padding: 60px 0 65px;
   }
 
   // display items
@@ -39,7 +39,7 @@
         align-items: flex-start;
       }
 
-      .img {
+      svg {
         width: 50px;
         margin-right: 20px;
 

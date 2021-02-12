@@ -3,7 +3,7 @@
   padding: 25px 0 30px;
 
   @include mq('tablet') {
-    padding: 35px 0 50px;
+    padding: 60px 0 65px;
   }
 
   &__items {
@@ -11,6 +11,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     column-gap: 20px;
+
+    @include mq('desktop', 'min') {
+      grid-template-columns: 1fr 1fr 2fr;
+    }
 
     @include mq('phablet') {
       margin-top: 20px;
@@ -42,6 +46,44 @@
 
     &-social {
       margin-top: 10px;
+
+      .social-item {
+        display: flex;
+
+        svg {
+          width: 30px;
+          margin-right: 5px;
+        }
+      }
     }
+  }
+}
+
+
+// contact form - page
+.contact-form {
+
+  input, select, textarea {
+    margin-top: 10px;
+    min-height: 45px;
+    border-radius: 8px;
+    border: 1px solid rgba($primary, 0.1);
+    box-shadow: -20px 0px 20px 0px rgba(50, 50, 93, 0.05), 0 5px 15px rgba(0, 0,0, 0.05);
+    text-indent: 10px;
+    color: $primary;
+    width: 100%;
+
+    &[type="submit"] {
+      width: auto;
+      padding: 10px 30px;
+      text-indent: 0;
+      background: $primary;
+      color: $white;
+      cursor: pointer;
+    }
+  }
+
+  textarea {
+    padding: 10px;
   }
 }
