@@ -65,18 +65,18 @@
 </footer>
 
 <?php wp_footer(); ?>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
 <script>
-	mapboxgl.accessToken = 'pk.eyJ1IjoibWFyY2luem9ncm9kbmlrIiwiYSI6ImNra3o5dnpoaTVrbjcyb3F0bW54MDF5ajMifQ.s6GVsjaAwAC35nTGsHRK_A';
-	var map = new mapboxgl.Map({
-		container: 'map',
-		style: 'mapbox://styles/mapbox/streets-v11',
-		center: [18.466720, 50.614210],
-		zoom: 11
-	});
-	var marker = new mapboxgl.Marker().setLngLat([18.466720, 50.614210]).addTo(map);
+	if ($(".contact-page").length > 0 || $(".start-page").length > 0) {
+		mapboxgl.accessToken = 'pk.eyJ1IjoibWFyY2luem9ncm9kbmlrIiwiYSI6ImNra3o5dnpoaTVrbjcyb3F0bW54MDF5ajMifQ.s6GVsjaAwAC35nTGsHRK_A';
+		var map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/mapbox/streets-v11',
+			center: [18.539738356169035, 50.564012651910524],
+			zoom: 11
+		});
+		var marker = new mapboxgl.Marker().setLngLat([18.539738356169035, 50.564012651910524]).addTo(map);
+}
+
 </script>
 </body>
 </html>

@@ -26,11 +26,9 @@ query_posts($args);
 <section class="hero">
   <div class="container">
     <div class="hero__content">
-      <h1>
-        Precyzyjne cięcie i gięcie  blach. Zawsze na czas.
-      </h1>
+        <?php the_field('title', false, false); ?>
       <p>
-        Oferujemy wysokiej jakości cięcie laserem blach, rur oraz profili. Wyginamy blachy jak nikt inny, zawsze precyzyjnie.
+        <?php the_field('lead'); ?>
       </p>
       <div class="hero-cta">
         <a class="btn" href="<?php echo site_url(); ?>/oferta/">
@@ -72,11 +70,11 @@ query_posts($args);
             </svg>
           </div>
           <div class="title">
-            <h3>Najwyższa jakość</h3>
+            <h3><?php the_field('1_title'); ?></h3>
           </div>
         </div>
         <div class="why-us__item-content">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  Magnam placeat illum in, inventore l aborum atque. Alias mollitia est, nobis sapiente iure obcaecati</p>
+          <p><?php the_field('1_text'); ?></p>
         </div>
       </div>
       <div class="why-us__item">
@@ -90,11 +88,11 @@ query_posts($args);
           </svg>
           </div>
           <div class="title">
-            <h3>Konkurencyjne ceny</h3>
+            <h3><?php the_field('2_title'); ?></h3>
           </div>
         </div>
         <div class="why-us__item-content">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  Magnam placeat illum in, inventore l aborum atque. Alias mollitia est, nobis sapiente iure obcaecati</p>
+          <p><?php the_field('2_text'); ?></p>
         </div>
       </div>
       <div class="why-us__item">
@@ -110,11 +108,11 @@ query_posts($args);
           </svg>
           </div>
           <div class="title">
-            <h3>Szybka realizacja</h3>
+            <h3><?php the_field('3_title'); ?></h3>
           </div>
         </div>
         <div class="why-us__item-content">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  Magnam placeat illum in, inventore l aborum atque. Alias mollitia est, nobis sapiente iure obcaecati</p>
+          <p><?php the_field('3_text'); ?></p>
         </div>
       </div>
       <div class="why-us__item">
@@ -131,11 +129,11 @@ query_posts($args);
           </svg>
           </div>
           <div class="title">
-            <h3>Darmowa wycena</h3>
+            <h3><?php the_field('4_title'); ?></h3>
           </div>
         </div>
         <div class="why-us__item-content">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  Magnam placeat illum in, inventore l aborum atque. Alias mollitia est, nobis sapiente iure obcaecati</p>
+          <p><?php the_field('4_text'); ?></p>
         </div>
       </div>
       <div class="why-us__item">
@@ -167,11 +165,11 @@ query_posts($args);
           </svg>
           </div>
           <div class="title">
-            <h3>Doświadczenie</h3>
+            <h3><?php the_field('5_title'); ?></h3>
           </div>
         </div>
         <div class="why-us__item-content">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  Magnam placeat illum in, inventore l aborum atque. Alias mollitia est, nobis sapiente iure obcaecati</p>
+          <p><?php the_field('5_text'); ?></p>
         </div>
       </div>
       <div class="why-us__item">
@@ -188,11 +186,11 @@ query_posts($args);
 
           </div>
           <div class="title">
-            <h3>Obsługa</h3>
+            <h3><?php the_field('6_title'); ?></h3>
           </div>
         </div>
         <div class="why-us__item-content">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  Magnam placeat illum in, inventore l aborum atque. Alias mollitia est, nobis sapiente iure obcaecati</p>
+          <p><?php the_field('6_text'); ?></p>
         </div>
       </div>
     </div>
@@ -212,7 +210,7 @@ query_posts($args);
     <?php while ( have_posts() ) : the_post(); ?>
       <div class="offer__item">
         <div class="offer__item-image">
-        <?php the_post_thumbnail( 'full' ); ?>
+        <?php the_post_thumbnail( 'medium' ); ?>
         </div>
         <div class="offer__item-content">
           <h3><?php the_title() ?></h3>
@@ -222,55 +220,7 @@ query_posts($args);
         </div>
       </div>
     <?php endwhile; ?>
-
-
-      <!-- <div class="offer__item">
-        <div class="offer__item-image">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/offer.jpg" alt="S.A.L - MET - Cięcie laserem rur i profili" />
-        </div>
-        <div class="offer__item-content">
-          <h3>Cięcie laserem rur i profili</h3>
-          <p>
-            acf
-          </p>
-
-          <div class="offer__item-cta">
-            <a href="<?php echo site_url(); ?>/oferta/ciecie-laserem-rur-i-profili/" class="btn btn-light">Więcej informacji</a>
-          </div>
-        </div>
-      </div>
-      <div class="offer__item">
-        <div class="offer__item-image">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/offer.jpg" alt="S.A.L - MET - Gięcie blach" />
-        </div>
-        <div class="offer__item-content">
-          <h3>Gięcie blach</h3>
-          <p>
-            acf
-          </p>
-
-          <div class="offer__item-cta">
-            <a href="<?php echo site_url(); ?>/oferta/giecie-blach/" class="btn btn-light">Więcej informacji</a>
-          </div>
-        </div>
-      </div>
-      <div class="offer__item">
-        <div class="offer__item-image">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/offer.jpg" alt="S.A.L - MET - Gięcie rur i profili" />
-        </div>
-        <div class="offer__item-content">
-          <h3>Gięcie rur i profili</h3>
-          <p>
-            acf
-          </p>
-
-          <div class="offer__item-cta">
-            <a href="<?php echo site_url(); ?>/oferta/giecie-rur-i-profili/" class="btn btn-light">Więcej informacji</a>
-          </div>
-        </div>
-      </div> -->
     </div>
-
     <div class="offer__more">
     <a href="<?php echo site_url(); ?>/oferta/" class="btn">Zobacz wszystkie usługi</a>
     </div>
@@ -283,13 +233,16 @@ query_posts($args);
     <h2>Realizacje</h2>
     <p class="lead"><?php the_field('realizacje-lead'); ?></p>
 
+    <?php echo do_shortcode( '[instagram-feed]' ); ?>
+
     <div class="portfolio__items">
+
       <?php
         if ( $portfolio_query->have_posts() ) :
           while ( $portfolio_query->have_posts() ) : $portfolio_query->the_post(); ?>
               <article class="portfolio__item">
                 <a href="<?php the_permalink(); ?>">
-                  <?php the_post_thumbnail( 'full' ); ?>
+                  <?php the_post_thumbnail( 'medium' ); ?>
                 </a>
               </article>
           <?php endwhile;
@@ -341,7 +294,7 @@ query_posts($args);
       if ( $blog_query->have_posts() ) :
         while ( $blog_query->have_posts() ) : $blog_query->the_post(); ?>
             <article class="blog__item">
-              <?php the_post_thumbnail( 'full' ); ?>
+              <?php the_post_thumbnail( 'medium' ); ?>
               <div class="blog__item-content">
                 <h3>
                   <a href="<?php the_permalink(); ?>">
@@ -351,7 +304,7 @@ query_posts($args);
                 <span class="blog__item-content-date"><?php echo get_the_date(); ?></span>
                 <p class="blog__item-content-excerpt"><?php echo get_the_excerpt(); ?></p>
                 <div class="blog__item-content-cta">
-                  <a href="<?php the_permalink(); ?>" class="btn">Czytaj więcej</a>
+                  <a href="<?php the_permalink(); ?>" class="btn btn-light">Czytaj więcej</a>
                 </div>
               </div>
             </article>
@@ -397,8 +350,8 @@ query_posts($args);
 
         <p>S.A.L - MET</p>
         <p>Łukasz Andryszewski</p>
-        <p class="sep">Nowe Osiedle 8/49</p>
-        <p>47-123 Zawadzkie,</p>
+        <p class="sep">Opolska 41</p>
+        <p>47-126 Kielcza,</p>
         <p>Polska</p>
         <p class="sep">NIP: 7561845454</p>
       </div>

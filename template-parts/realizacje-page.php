@@ -3,9 +3,8 @@
  * Template Name: Realizacje
  */
 $args = array(
-  'category_name' => 'Realizacje',
+  'cat' => 3,
   'order' => 'ASC',
-  'posts_per_page' => -1,
 );
 $your_query = new WP_Query($args);
 
@@ -21,10 +20,17 @@ get_header();
             while ( $your_query->have_posts() ) : $your_query->the_post(); ?>
             <article class="portfolio__page-items-item">
               <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail( 'full' ); ?>
+                <?php echo the_post_thumbnail(); ?>
               </a>
             </article>
           <?php endwhile; ?>
       </div>
+
+      <h2>Instagram</h2>
+      <?php echo do_shortcode( '[instagram-feed]' ); ?>
   </div>
 </article>
+
+<?php
+get_footer();
+?>

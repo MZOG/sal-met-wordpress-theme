@@ -28,8 +28,11 @@ get_header(); ?>
                   <?php the_title(); ?>
                 </a>
               </h2>
+              <p>
+                <?php the_excerpt(); ?>
+              </p>
               <div class="cta">
-                <a class="btn" href="<?php the_permalink(); ?>">
+                <a class="btn btn-small" href="<?php the_permalink(); ?>">
                   Sprawdź więcej
                 </a>
               </div>

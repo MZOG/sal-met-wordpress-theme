@@ -18,7 +18,6 @@ get_header();
 	<div class="page">
 
 		<div class="container">
-			<div class="blog__posts">
 			<?php
 		if ( have_posts() ) :
 
@@ -43,7 +42,6 @@ get_header();
 
 		endif;
 		?>
-			</div>
 		</div>
 
 	</div>

@@ -25,6 +25,9 @@
 
   &__item {
     margin-bottom: 30px;
+    border: 1px dashed rgba($primary, 0.2);
+    @include bs;
+    padding: 20px;
 
     @include mq('desktop', 'min') {
       margin-bottom: 50px;
@@ -61,6 +64,8 @@
       .title {
         h3 {
           padding-bottom: 4px;
+          color: $primary;
+
           @include mq('phablet') {
             margin-top: 10px;
           }
@@ -70,6 +75,10 @@
 
     &-content {
       margin-top: 10px;
+
+      p {
+        font-weight: 500;
+      }
     }
   }
 

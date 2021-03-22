@@ -72,7 +72,7 @@ add_theme_support('post-thumbnails', array(
 	/*
 * Define a constant path to our single template folder
 */
-define(SINGLE_PATH, TEMPLATEPATH . '/single');
+define('SINGLE_PATH', TEMPLATEPATH.'/single/');
 
 /**
 * Filter the single_template with our custom function
@@ -90,12 +90,11 @@ global $wp_query, $post;
 * Check by category slug and ID
 */
 foreach((array)get_the_category() as $cat) :
+	if(file_exists(SINGLE_PATH . '/single-cat-' . $cat->slug . '.php'))
+	return SINGLE_PATH . '/single-cat-' . $cat->slug . '.php';
 
-if(file_exists(SINGLE_PATH . '/single-cat-' . $cat->slug . '.php'))
-return SINGLE_PATH . '/single-cat-' . $cat->slug . '.php';
-
-elseif(file_exists(SINGLE_PATH . '/single-cat-' . $cat->term_id . '.php'))
-return SINGLE_PATH . '/single-cat-' . $cat->term_id . '.php';
+	elseif(file_exists(SINGLE_PATH . '/single-cat-' . $cat->term_id . '.php'))
+	return SINGLE_PATH . '/single-cat-' . $cat->term_id . '.php';
 
 endforeach;
 }
@@ -123,3 +122,5 @@ if ( ! function_exists( 'salmet_register_nav_menu' ) ) {
 	}
 	add_action( 'after_setup_theme', 'salmet_register_nav_menu', 0 );
 }
+
+add_post_type_support( 'page', 'excerpt' );
